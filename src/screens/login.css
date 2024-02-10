@@ -1,0 +1,7 @@
+.login-page {
+    padding-top: 50px;
+    min-height: 78vh;
+}
+.form-control {
+    max-width: 60%;
+}
