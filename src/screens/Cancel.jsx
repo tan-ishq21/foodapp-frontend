@@ -1,7 +1,6 @@
-// Cancel.jsx
 
 import React from 'react';
-import './cancel.css'; // Importing CSS file for styling
+import './cancel.css'; 
 
 const Cancel = () => {
 

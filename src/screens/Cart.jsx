@@ -36,7 +36,7 @@ export default function Cart() {
     });
 
 
-    let checkoutResponse = await fetch("http://localhost:5000/api/checkout", {
+    let checkoutResponse = await fetch("https://foodapp-backend-8g5e.onrender.com/api/checkout", {
       // credentials: 'include',
       // Origin:"http://localhost:3000/login",
       method: 'POST',
