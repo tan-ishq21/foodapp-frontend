@@ -1,6 +1,7 @@
 import React from 'react'
 import { FaTrash } from 'react-icons/fa';
 import { useCart, useDispatchCart } from '../components/ContextReducer';
+import {loadStripe} from "@stripe/stripe-js" 
 export default function Cart() {
   let data = useCart();
   let dispatch = useDispatchCart();
@@ -17,9 +18,10 @@ export default function Cart() {
   // }
 
   const handleCheckOut = async () => {
+    const stripe = await loadStripe("pk_test_51P162zSD2ABbztaQama9s7TNQ6n4Cz3jND0mQHoektMoEMcL53hktIJct0VJPBClxstnJDS04mFzIf4aFgYQxgZQ00KF2kd4Rz")
     let userEmail = localStorage.getItem("userEmail");
     // console.log(data,localStorage.getItem("userEmail"),new Date())
-    let response = await fetch("https://foodapp-backend-8g5e.onrender.com/api/orderData", {
+    let response = await fetch("http://localhost:5000/api/orderData", {
       // credentials: 'include',
       // Origin:"http://localhost:3000/login",
       method: 'POST',
@@ -32,10 +34,36 @@ export default function Cart() {
         order_date: new Date().toDateString()
       })
     });
-    console.log("JSON RESPONSE:::::", response.status)
-    if (response.status === 200) {
+
+
+    let checkoutResponse = await fetch("http://localhost:5000/api/checkout", {
+      // credentials: 'include',
+      // Origin:"http://localhost:3000/login",
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        order_data: data,
+        email: userEmail,
+        order_date: new Date().toDateString()
+      })
+    });
+
+    const session = await checkoutResponse.json();
+
+    const result = stripe.redirectToCheckout({
+      sessionId: session.id
+    })
+
+    if(result.error){
+      console.log("stripe Payment error", result.error);
+    }
+
+    console.log("JSON RESPONSE:::::", checkoutResponse.status)
+    if (checkoutResponse.status === 200) {
       dispatch({ type: "DROP" })
-      alert("Order Executed....")
+      alert("Redirect to Payment Gateway.....")
     }
   }
 
@@ -43,7 +71,7 @@ export default function Cart() {
   return (
     <div>
 
-      {console.log(data)}
+      {/* {console.log(data)} */}
       <div className='container m-auto mt-5 table-responsive table-responsive-sm table-responsive-md' >
         <table className='table table-info'>
           <thead className='fs-4'>

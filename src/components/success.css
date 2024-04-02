@@ -1,0 +1,34 @@
+
+/* Success.css */
+
+.success-container {
+    text-align: center;
+    margin-top: 100px;
+  }
+.success-icon {
+    color: #4CAF50; /* Green color */
+    font-size: 75px; /* Adjust size as needed */
+    margin-bottom: 30px;
+}
+.success-pay {
+    color: #4CAF50;
+  }
+  
+  p {
+    margin-bottom: 20px;
+  }
+  
+  .continue-shopping-btn {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .continue-shopping-btn:hover {
+    background-color: #139f1a;
+  }
+  

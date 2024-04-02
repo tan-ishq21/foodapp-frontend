@@ -10,7 +10,7 @@ const Login = () => {
     let navigate = useNavigate();
     const handleSubmit = async(e) => {
         e.preventDefault();
-        const response = await fetch('https://foodapp-backend-8g5e.onrender.com/api/loginuser',{
+        const response = await fetch('http://localhost:5000/api/loginuser',{
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -39,7 +39,7 @@ const Login = () => {
     return (
         <>
         <Navbar />
-        <div className="container login-page">
+        <div className="container1 login-page">
             <form onSubmit={handleSubmit}>
                 
                 <div className="mb-3">
@@ -52,7 +52,7 @@ const Login = () => {
                     <input type="password" placeholder="Password..." className="form-control" name="password" value={credentials.password} onChange={onChange} id="exampleInputPassword1" />
                 </div>
                 
-                <button type="submit" className="m-3 btn btn-success">Submit</button>
+                <button type="submit" className="m-3 btn btn-success">Login</button>
                 <Link to="/createuser" className="m-3 btn btn-danger">New User</Link>
             </form>
         </div>

@@ -9,7 +9,7 @@ const Signup = () => {
 
     const handleSubmit = async(e) => {
         e.preventDefault();
-        const response = await fetch('https://foodapp-backend-8g5e.onrender.com/api/createuser',{
+        const response = await fetch('http://localhost:5000/api/createuser',{
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -33,7 +33,7 @@ const Signup = () => {
     return (
         <>
         <Navbar />
-        <div className="container signup-page">
+        <div className="container1 signup-page">
             <form onSubmit={handleSubmit}>
                 <div className="mb-3">
                     <label htmlFor="name" className="form-label">Name</label>

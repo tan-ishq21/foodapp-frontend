@@ -1,0 +1,29 @@
+/* Cancel.css */
+
+.cancel-container {
+    text-align: center;
+    margin-top: 100px;
+  }
+  
+  .cancel-pay {
+    color: #f44336;
+  }
+  
+  p {
+    margin-bottom: 20px;
+  }
+  
+  .go-back-btn {
+    padding: 10px 20px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .go-back-btn:hover {
+    background-color: #d32f2f;
+  }
+  
