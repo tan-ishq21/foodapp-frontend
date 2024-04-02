@@ -9,8 +9,9 @@ import "../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
 import Signup from './screens/Signup.jsx'
 import { CartProvider } from './components/ContextReducer.jsx'
 import MyOrder from './screens/MyOrders.jsx'
-import Success from './components/Success.jsx'
-import Cancel from './components/Cancel.jsx'
+import Success from './screens/Success.jsx'
+import Cancel from './screens/Cancel.jsx'
+
 function App() {
   
   return (
