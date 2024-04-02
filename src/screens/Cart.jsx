@@ -21,7 +21,7 @@ export default function Cart() {
     const stripe = await loadStripe("pk_test_51P162zSD2ABbztaQama9s7TNQ6n4Cz3jND0mQHoektMoEMcL53hktIJct0VJPBClxstnJDS04mFzIf4aFgYQxgZQ00KF2kd4Rz")
     let userEmail = localStorage.getItem("userEmail");
     // console.log(data,localStorage.getItem("userEmail"),new Date())
-    let response = await fetch("http://localhost:5000/api/orderData", {
+    let response = await fetch("https://foodapp-backend-8g5e.onrender.com/api/orderData", {
       // credentials: 'include',
       // Origin:"http://localhost:3000/login",
       method: 'POST',

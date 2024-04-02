@@ -8,7 +8,7 @@ const MyOrder = () => {
 
     const fetchMyOrder = async () => {
         console.log(localStorage.getItem('userEmail'))
-        await fetch("http://localhost:5000/api/myorderData", {
+        await fetch("https://foodapp-backend-8g5e.onrender.com/api/myorderData", {
             // credentials: 'include',
             // Origin:"http://localhost:3000/login",
             method: 'POST',

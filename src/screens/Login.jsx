@@ -10,7 +10,7 @@ const Login = () => {
     let navigate = useNavigate();
     const handleSubmit = async(e) => {
         e.preventDefault();
-        const response = await fetch('http://localhost:5000/api/loginuser',{
+        const response = await fetch('https://foodapp-backend-8g5e.onrender.com/api/loginuser',{
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
