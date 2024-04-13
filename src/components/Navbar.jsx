@@ -4,6 +4,7 @@ import { Link , useNavigate } from 'react-router-dom';
 import Modal from '../Modal';
 import Cart from '../screens/Cart';
 import { useCart } from './ContextReducer';
+import "./navbar.css"
 const Navbar = () => {
     const [cartView , setCartView] = useState(false)
     let data = useCart()
@@ -14,7 +15,7 @@ const Navbar = () => {
     }
     return (
         <>
-            <nav className="navbar navbar-expand-lg navbar-light bg-info">
+            <nav className="navbar navbar-expand-lg navbar-light">
             <div className="container-fluid">
                 <Link className="navbar-brand" to="/">Flavor Wheels</Link>
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

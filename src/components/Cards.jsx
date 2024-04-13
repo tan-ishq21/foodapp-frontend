@@ -38,14 +38,14 @@ const Card = (props) => {
     },[])
     return (
         <>
-            <div className="card mt-3" style={{ width: "18rem", maxHeight: "360px"}}>
+            <div className="cards mt-3" style={{ width: "18rem", maxHeight: "360px"}}>
                 <img src={props.foodItem.img} className="card-img-top" alt="..." style={{height:"150px" , objectFit:"fill"}} />
                 <div className="card-body">
                     <h5 className="card-title">{props.foodItem.name}</h5>
                     <div className="container w-100">
                         {/* <div className="row"> */}
                             {/* <div className="col-12 col-md-6"> */}
-                                <select className="m-2 h-100 bg-success" onChange={(e) => setQuantity(e.target.value)}>
+                                <select className="dropdown-btn m-2 h-100" onChange={(e) => setQuantity(e.target.value)}>
                                     {
                                         Array.from(Array(6), (e, i) => {
                                             return (
@@ -56,7 +56,7 @@ const Card = (props) => {
                                 </select>
                             {/* </div> */}
                             {/* <div className="col-12 col-md-6"> */}
-                                <select className="m-2 h-100 bg-success" ref={priceRef} onChange={(e) => setSize(e.target.value)}>
+                                <select className="dropdown-btn m-2" ref={priceRef} onChange={(e) => setSize(e.target.value)}>
                                     {
                                         priceOptions.map((data) => {
                                             return <option key={data} value={data} >{data}</option>
@@ -72,7 +72,7 @@ const Card = (props) => {
                         </div>
                     </div>
                     <hr />
-                    <button className={`btn btn-success justify-center ms-2`} onClick={handleAddToCart}>Add to Cart</button>
+                    <button className="btn justify-center ms-2" onClick={handleAddToCart}>Add to Cart</button>
                 </div>
             </div>
         </>

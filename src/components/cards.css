@@ -1,3 +1,18 @@
+.cards{
+    border: 2px solid magenta;
+    box-shadow: 0 30px 40px rgba(255, 0, 255, 0.3);
+}
+.card-body{
+    background-color: rgb(39, 38, 38);
+}
+.btn{
+    background-color: rgb(156, 81, 140) !important; 
+}
+.dropdown-btn{
+    background-color: rgb(156, 81, 140);
+    border-radius: 5%;
+}
+
 @media only screen and (max-device-width: 768px){
     .card{
         max-width: 15rem;
